@@ -1,0 +1,16 @@
+output:
+  logstash:
+    hosts:
+      - "logstash:5043"
+    # Optional protocol and basic auth credentials.
+    username: "elastic"
+    password: "changeme"
+      
+    timeout: 15
+  console:
+    pretty: true
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/var/www/site/storage/logs/*.log"
