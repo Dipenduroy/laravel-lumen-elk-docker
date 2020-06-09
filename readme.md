@@ -1,8 +1,6 @@
 # Centralised Logging System for any application in an ElasticStack. Wired up with docker-compose
 
-Contains a docker-compose declaration that boots up both laravel/lumen services and the Elastic Stack (5).
-
-The Laravel services is pretty much bare bone out of the box. Only configuration done was changing the logging format in Monolog to logstash. That happens in `app/Providers/AppServiceProvider.php`
+Contains a docker-compose declaration that boots up both laravel/lumen services and the Elastic Stack.
 
 Setup laravel/lumen basic steps along with composer install
 
@@ -21,7 +19,9 @@ After `docker-compose up`:
 - Add `logstash*` in log indices list
 - Go to Logs section to stream realtime logs
 
-# Slides
+# Configure your application to log as per logstash format
+- Laravel/Lumen uses Monolog library for log option
+- Configure Monolog to use logstash formatter. That happens in `app/Providers/AppServiceProvider.php`
 
 ![Slide 1](slides/slide1.jpeg "Slide 1")
 ![Slide 2](slides/slide2.jpeg "Slide 2")
